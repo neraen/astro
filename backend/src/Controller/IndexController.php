@@ -6,6 +6,6 @@ class IndexController
 {
     public function index()
     {
-        echo "Hello World!";dd
+        echo "Hello World!";
     }
 }

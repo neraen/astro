@@ -7,5 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup PHP, extensions and composer with shivammathur/setuphp
+        # You may pin to the exact commit or the version.
+        # uses: shivammathur/setup-php@7fdd3ece872ec7ec4c098ae5ab7637d5e0a96067
+        uses: shivammathur/setup-php@2.26.0
+        with:
+          extentions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json
+      
       - name: LS
         run: ls

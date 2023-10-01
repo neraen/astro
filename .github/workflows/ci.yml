@@ -16,7 +16,7 @@ jobs:
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json
       
       - name: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.3.2
         with:
           path: |
             vendor

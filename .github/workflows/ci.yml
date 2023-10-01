@@ -23,4 +23,4 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
 
       - name: Composer install
-        run: composer install --no-interaction --no-progress
+        run:  cd backend composer install --no-interaction --no-progress

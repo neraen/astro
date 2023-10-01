@@ -15,5 +15,12 @@ jobs:
         with:
           extentions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json
       
-      - name: LS
-        run: ls
+      - name: cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            vendor
+          key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
+
+      - name: Composer install
+        run: composer install --no-interaction --no-progress

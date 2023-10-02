@@ -22,12 +22,12 @@ jobs:
             vendor
           key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
           
-      - name: Debug working directory
-        run: |
-          pwd
-          ls -l
+      #- name: Debug working directory
+        #run: |
+          #pwd
+          #ls -l
 
 
-      #- name: Composer install
-        #working-directory: ${{ github.workspace }}
-        #run: composer install --no-interaction --no-progress
+      - name: Composer install
+        working-directory: ${{ github.workspace }}/backend
+        run: composer install --no-interaction --no-progress

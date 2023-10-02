@@ -43,6 +43,7 @@ jobs:
         run: symfony check:security
 
       - name: PHP-CS-Fixer
+        working-directory: ${{ github.workspace }}/backend
         run: |
             composer require friendsofphp/php-cs-fixer
             ./vendor/bin/php-cs-fixer fix --dry-run

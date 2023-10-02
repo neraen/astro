@@ -21,9 +21,7 @@ jobs:
           path: |
             vendor
           key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
-      
-      - name: go to backend
-        run: cd backend
 
       - name: Composer install
+        working-directory: /github/workspace
         run: composer install --no-interaction --no-progress

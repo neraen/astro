@@ -33,9 +33,11 @@ jobs:
         run: composer install --no-interaction --no-progress
 
       - name: Symfony CLI
+        working-directory: ${{ github.workspace }}/backend
         run: |
             curl -sS https://get.symfony.com/cli/installer | bash
             mv /home/runner/.symfony5/bin/symfony /usr/local/bin/symfony
 
       - name: Symfony Check Vulnerabilities
+        working-directory: ${{ github.workspace }}/backend
         run: symfony check:security

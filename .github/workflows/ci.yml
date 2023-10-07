@@ -59,10 +59,13 @@ jobs:
             ./vendor/bin/phpstan analyse src --memory-limit 1G
             
       - name: Lint YAML files
+        working-directory: ${{ github.workspace }}/backend
         run: ./bin/console lint:yaml config --parse-tags
 
       - name: Lint Parameters and service
+        working-directory: ${{ github.workspace }}/backend
         run: ./bin/console lint:container --no-debug
 
       - name: Lint Doctrine entities
+        working-directory: ${{ github.workspace }}/backend
         run: ./run/console doctrine:schema:validate --skip-sync -vvv --no-interaction

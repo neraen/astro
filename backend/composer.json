@@ -92,6 +92,9 @@
         "symfony": {
             "allow-contrib": false,
             "require": "6.3.*"
+        },
+        "composer-plugin-whitelist": {
+            "phpstan/extension-installer": true
         }
     },
     "require-dev": {

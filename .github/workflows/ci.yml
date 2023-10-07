@@ -52,6 +52,7 @@ jobs:
         working-directory: ${{ github.workspace }}/backend
         run: |
             ./vendor/bin/simple-phpunit install
+            composer config --no-plugins allow-plugins.phpstan/extension-installer true
             composer require phpstan/phpstan
             composer require phpstan/extension-installer
             composer require phpstan/phpstan-symfony
